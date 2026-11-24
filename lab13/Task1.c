@@ -8,6 +8,12 @@
 char* greeting(char* name) {
 
 	char* greet[99];
+
+	// только заглавные
+	for (int i = 0; i < 49; i++) {
+		name[i] = toupper(name[i]);
+	}
+
 	strcpy(greet, "Добро пожаловать, ");
 	strcat(greet, name);
 	strcat(greet, "!");
