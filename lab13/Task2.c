@@ -14,6 +14,14 @@ char* greeting(char* name) {
 	last_ind = strlen(name) - 1;
 	a = &name[last_ind];
 
+	// только заглавные (первая строчная)
+	for (int i = 0; i <= last_ind; i++) {
+		if (i == 0)
+			name[i] = tolower(name[i]);
+		else 
+			name[i] = toupper(name[i]);
+	}
+
 	strcpy(greet, "Добро пожаловать, ");
 	strcat(greet, name);
 	strcat(greet, a); // удвоенная последняя буква
