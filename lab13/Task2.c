@@ -8,10 +8,24 @@
 char* greeting(char* name) {
 
 	char greet[99];
-	char* a, b;
-	int last_ind;
+	char* a, b, buff; // буффер
+	int last_ind, size;
 
 	last_ind = strlen(name) - 1;
+	a = &name[last_ind];
+
+	size = strlen(name);
+
+	// наоборот
+	for (int i = 0; i < size / 2; i++) {
+		buff = name[i];
+		name[i] = *a;
+		*a = buff;
+		a--;
+	}
+
+	/*
+
 	a = &name[last_ind];
 
 	// только заглавные (первая строчная)
@@ -27,10 +41,12 @@ char* greeting(char* name) {
 	name[1] = name[0];
 	name[0] = b;
 
+	*/
+
 	strcpy(greet, "Добро пожаловать, ");
 	strcat(greet, name);
-	strcat(greet, a); // удвоенная последняя буква
-	strcat(greet, "_"); // добавление подчёркивания в конце
+	// strcat(greet, a); // удвоенная последняя буква
+	// strcat(greet, "_"); // добавление подчёркивания в конце
 
 	return greet;
 }
