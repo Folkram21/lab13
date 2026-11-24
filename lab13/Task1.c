@@ -16,7 +16,7 @@ char* greeting(char* name) {
 
 	strcpy(greet, "Добро пожаловать, ");
 	strcat(greet, name);
-	strcat(greet, "!");
+	strcat(greet, "!!!!!!!!!!!!!!!!!!!!!!"); // БОЛЬШЕ !!!!!!!!!
 
 	return greet;
 }
