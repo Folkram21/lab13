@@ -7,15 +7,16 @@
 
 char* greeting(char* name) {
 
-	char* greet[99];
+	char greet[99];
+	char* a;
+	int last_ind;
 
-	// только заглавные
-	for (int i = 0; i < 49; i++) {
-		name[i] = toupper(name[i]);
-	}
+	last_ind = strlen(name) - 1;
+	a = &name[last_ind];
 
 	strcpy(greet, "Добро пожаловать, ");
 	strcat(greet, name);
+	strcat(greet, a); // удвоенная последняя буква
 	strcat(greet, "!");
 
 	return greet;
@@ -27,7 +28,7 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	char* name[49];
+	char name[49];
 
 	printf("\nО таинственный незнакомец, поведайте нам своё величавое имя -> ");
 	scanf("%49s", name);
