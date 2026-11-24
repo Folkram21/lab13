@@ -30,7 +30,7 @@ char* greeting(char* name) {
 	strcpy(greet, "Добро пожаловать, ");
 	strcat(greet, name);
 	strcat(greet, a); // удвоенная последняя буква
-	strcat(greet, "!");
+	strcat(greet, "_"); // добавление подчёркивания в конце
 
 	return greet;
 }
