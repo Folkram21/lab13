@@ -8,7 +8,7 @@
 char* greeting(char* name) {
 
 	char greet[99];
-	char* a;
+	char* a, b;
 	int last_ind;
 
 	last_ind = strlen(name) - 1;
@@ -21,6 +21,11 @@ char* greeting(char* name) {
 		else 
 			name[i] = toupper(name[i]);
 	}
+
+	// замена местами первого и второго символа
+	b = name[1];
+	name[1] = name[0];
+	name[0] = b;
 
 	strcpy(greet, "Добро пожаловать, ");
 	strcat(greet, name);
